@@ -12,8 +12,7 @@ class CKarhunenLoeveBasisDlg : public CDialogEx
 public:
 	CKarhunenLoeveBasisDlg(CWnd* pParent = nullptr);	// стандартный конструктор
 
-	int svd_hestenes(int, int, double*, double*, double*, double*);
-	float Psi();
+	int svd_hestenes(int, int, float*, float*, float*, float*);
 	float det(float** T, UINT32 N);
 
 // Данные диалогового окна
@@ -35,6 +34,7 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	double* MatrH, * MatrU, * MatrV, * MatrSigma;
 	afx_msg void OnBnClickedButtonSvdPart1();
+	int size = 3;
+	CString result_part1;
 };
